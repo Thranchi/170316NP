@@ -11,13 +11,38 @@
         android:id="@+id/textView5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Press to start booking restaurant." />
+        android:text="Press to start restaurant reservation." />
 
-    <Switch
-        android:id="@+id/startingswitch"
-        android:layout_width="90dp"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start" />
+        android:orientation="horizontal">
+
+        <Switch
+            android:id="@+id/startingswitch"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Start" />
+
+        <TextView
+            android:id="@+id/timert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#cc00ff"
+            android:visibility="gone"
+            android:text="Time spent on booking :    " />
+
+        <Chronometer
+            android:id="@+id/timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#cc00ff"
+            android:visibility="gone"
+            android:layout_weight="1" />
+
+    </LinearLayout>
 
     <FrameLayout
         android:id="@+id/ground"
@@ -26,7 +51,7 @@
         android:layout_margin="10dp"
         android:background="#efbebe"
         android:padding="10dp"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <DatePicker
             android:id="@+id/datePicker"
@@ -41,17 +66,198 @@
             android:visibility="gone"/>
 
         <GridLayout
+            android:id="@+id/people"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnCount="2"
+            android:rowCount="3"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/ad"
+                android:layout_column="0"
+                android:layout_row="0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Adult" />
+
+            <EditText
+            android:id="@+id/adultn"
+                android:layout_column="1"
+                android:layout_row="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Only Number" />
+
+            <TextView
+                android:id="@+id/te"
+                android:layout_column="0"
+                android:layout_row="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Teen" />
+
+            <EditText
+            android:id="@+id/teenn"
+                android:layout_column="1"
+                android:layout_row="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Only Number" />
+
+            <TextView
+                android:id="@+id/ki"
+                android:layout_column="0"
+                android:layout_row="2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/kidn"
+                android:layout_column="1"
+                android:layout_row="2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Only Number" />
+
+        </GridLayout>
+
+        <GridLayout
             android:id="@+id/result"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="visible"
-            android:background="#e0fbff">
+            android:background="#e0fbff"
+            android:columnCount="2"
+            android:rowCount="7"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/editText4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="0"
+                android:layout_columnSpan="2"
+                android:gravity="center_horizontal"
+                android:text="Reservation results"
+                android:layout_marginBottom="30dp"
+
+                android:textColor="#1f07f7"
+                android:textSize="30sp" />
+            <TextView
+                android:id="@+id/t1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="1"
+                android:layout_marginBottom="5dp"
+
+                android:text="Date :" />
+
+            <TextView
+                android:id="@+id/datet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="1"
+                android:text="You didn't say." />
+
+            <TextView
+                android:id="@+id/t2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="2"
+                android:layout_marginBottom="5dp"
+
+                android:text="Time :" />
+
+            <TextView
+                android:id="@+id/timet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="2"
+                android:text="You didn't say." />
+
+            <TextView
+                android:id="@+id/t3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="3"
+                android:layout_marginBottom="5dp"
+
+                android:text="Adults :" />
+
+            <TextView
+                android:id="@+id/adultt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="3"
+                android:text="You didn't say." />
+            <TextView
+                android:id="@+id/t4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="4"
+                android:layout_marginBottom="5dp"
+
+                android:text="Teens :" />
+
+            <TextView
+                android:id="@+id/teent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="4"
+                android:text="You didn't say." />
+
+            <TextView
+                android:id="@+id/t5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="5"
+                android:layout_marginBottom="5dp"
+                android:text="Children :" />
+
+            <TextView
+                android:id="@+id/kidt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="5"
+                android:text="You didn't say." />
+
+            <TextView
+                android:id="@+id/GGut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="6"
+                android:layout_marginTop="15dp"
+
+                android:layout_columnSpan="2"
+                android:text="Reserve Successfully."
+                android:textColor="#f77f07"
+                android:textSize="20sp" />
 
         </GridLayout>
 
     </FrameLayout>
 
     <LinearLayout
+        android:id="@+id/buttonbox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
